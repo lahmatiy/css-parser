@@ -13,19 +13,9 @@ module.exports = {
                 end: 10,
                 declarations: [
                     {
-                        start: 4,
-                        end: 9,
                         type: 'declaration',
-                        property: {
-                            type: 'property',
-                            start: 4,
-                            end: 5
-                        },
-                        value: {
-                            type: 'value',
-                            start: 7,
-                            end: 8
-                        }
+                        start: 4,
+                        end: 9
                     }
                 ]
             },
