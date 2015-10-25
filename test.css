@@ -1,12 +1,13 @@
 .a {
   color: green;
-}
+};
 
+@import 'asd';
 @media print {
   .a {
     color: blue;
   }
-}
+};
 
 .a {
   color: green;
