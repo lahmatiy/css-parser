@@ -1,34 +1,38 @@
 module.exports = {
+    type: 'stylesheet',
     start: 0,
     end: 12,
-    type: 'stylesheet',
     content: [
         {
             type: 'ruleset',
             start: 0,
             end: 11,
             block: {
+                type: 'block',
                 start: 4,
                 end: 10,
-                type: 'block',
                 declarations: [
                     {
                         start: 4,
                         end: 9,
                         type: 'declaration',
                         property: {
+                            type: 'property',
                             start: 4,
-                            end: 8,
-                            name: 'color',
-                            type: 'property'
+                            end: 5
+                        },
+                        value: {
+                            type: 'value',
+                            start: 7,
+                            end: 8
                         }
                     }
                 ]
             },
             selector: {
+                type: 'selector',
                 start: 0,
-                end: 2,
-                type: 'selector'
+                end: 2
             }
         }
     ]

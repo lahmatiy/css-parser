@@ -18,9 +18,12 @@ describe('Parser', function() {
 
         it(pathEntry, function() {
             var input = fs.readFileSync(inputFileName, 'utf-8');
-            var output = require(inputFileName.replace(/\.css$/, '.js'));
+            var expected = require(inputFileName.replace(/\.css$/, '.js'));
+            var actual = parser(input, {
+                translateFragments: false
+            });
 
-            assert.deepEqual(parser(input), output);
+            assert.deepEqual(actual, expected);
         });
     });
 
