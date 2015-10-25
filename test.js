@@ -4,7 +4,7 @@ var tokenize = require('./lib/tokenize.js');
 var parse = require('./lib/index.js');
 
 var mem = process.memoryUsage().heapUsed;
-console.log('baseline    mem:  %d',
+console.log('\nbaseline    mem:  %d',
   mem
 );
 
@@ -32,7 +32,7 @@ parse(src);
 var timeDiff = process.hrtime(time);
 // console.log('>', res.tokens.length);
 console.log('-------------------------------');
-console.log('total       mem: +%d, time: %dms',
+console.log('total       mem: +%d, time: %dms\n',
   process.memoryUsage().heapUsed - mem,
   parseInt(timeDiff[0] * 1e3 + timeDiff[1] / 1e6, 10)
 );
