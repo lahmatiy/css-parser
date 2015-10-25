@@ -19,8 +19,9 @@ function processPath(testPath, callback) {
         it(pathEntry, function() {
             var input = fs.readFileSync(inputFileName, 'utf-8');
             var expected = require(inputFileName.replace(/\.css$/, '.js'));
+            var actual = callback(input.trim());
 
-            assert.deepEqual(callback(input), expected);
+            assert.deepEqual(actual, expected);
         });
     });
 }
