@@ -1,0 +1,12 @@
+{
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/*.js",
+    "codestyle": "jscs lib/ test/"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "jscs": "^2.4.0",
+    "mocha": "^2.3.3"
+  }
+}
