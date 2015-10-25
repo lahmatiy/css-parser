@@ -1,12 +1,12 @@
 module.exports = {
     type: 'stylesheet',
     start: 0,
-    end: 6,
+    end: 25,
     content: [
         {
             type: 'ruleset',
             start: 0,
-            end: 5,
+            end: 24,
             selector: {
                 type: 'selector',
                 start: 0,
@@ -15,8 +15,14 @@ module.exports = {
             block: {
                 type: 'block',
                 start: 4,
-                end: 4,
-                declarations: []
+                end: 23,
+                declarations: [
+                    {
+                        type: 'declaration',
+                        start: 4,
+                        end: 22
+                    }
+                ]
             }
         }
     ]

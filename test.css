@@ -12,3 +12,7 @@
 .a {
   color: green;
 }
+
+.test {
+    background: url(data:image/png;base64,...);
+}
