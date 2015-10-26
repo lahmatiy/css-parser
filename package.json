@@ -2,7 +2,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "codestyle": "jscs lib/ test/"
+    "codestyle": "jscs lib/ test/",
+    "trace": "node --trace-hydrogen --trace-phase=Z --trace-deopt --code-comments --hydrogen-track-positions --redirect-code-traces --redirect-code-traces-to=code.asm --print-opt-code test"
   },
   "devDependencies": {
     "chai": "^3.4.0",

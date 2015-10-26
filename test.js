@@ -11,8 +11,10 @@ console.log('\nbaseline    mem:  %d',
 );
 
 var src = require('fs').readFileSync('../protools/web-frontend/build/agent/index-theme-app.css', 'utf-8');
+// 13171 declarations, 4183 blocks
 // var src = '/*\n  test\n*/\n .asd:nth-child(2n + 1) { color: rgba(255.2,255,255) /***/ url("sdf\\"dfsf") }';
 // var src = require('fs').readFileSync('./test.css', 'utf-8');
+// var src = require('fs').readFileSync('./test/fixtures/parser/selector-simple.css', 'utf-8');
 console.log('read        mem: +%d (%d symbols)',
     process.memoryUsage().heapUsed - mem,
     src.length
