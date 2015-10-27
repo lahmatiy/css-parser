@@ -5,6 +5,7 @@ var parse = require('./lib/index.js');
 
 var translateFragments = process.argv.indexOf('--translate') !== -1;
 var printAst = process.argv.indexOf('--print') !== -1;
+var sourceMap = process.argv.indexOf('--no-source-map') === -1;
 var mem = process.memoryUsage().heapUsed;
 console.log('\nbaseline    mem:  %d',
     mem
@@ -28,9 +29,9 @@ var time = process.hrtime();
 var mem = process.memoryUsage().heapUsed;
 
 // ///////////////
-// parse('.a { color: red } @at (a:1) { .a { color: green } }');
 var ast = parse(src, {
     stat: true,
+    sourceMap: sourceMap,
     translateFragments: translateFragments
 });
 // console.log(tokenize('asd "sdfdsf\nasdasd'));
@@ -38,8 +39,13 @@ var ast = parse(src, {
 
 var timeDiff = process.hrtime(time);
 // console.log('>', res.tokens.length);
-console.log('-------------------------------');
-console.log('total       mem: +%d, time: %dms\n',
+if (ast.stat) {
+    console.log(ast.stat.join('\n'));
+}
+
+console.log(
+    '-------------------------------\n' +
+    'total       mem: +%d, time: %dms\n',
     process.memoryUsage().heapUsed - mem,
     parseInt(timeDiff[0] * 1e3 + timeDiff[1] / 1e6, 10)
 );
