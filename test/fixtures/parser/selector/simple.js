@@ -1,11 +1,11 @@
 module.exports = {
     type: 'stylesheet',
     start: 0,
-    length: 25,
+    length: 8,
     content: {
         type: 'ruleset',
         start: 0,
-        length: 25,
+        length: 8,
         next: null,
 
         selector: {
@@ -16,9 +16,9 @@ module.exports = {
             content: [
                 {
                     type: 'selector',
-                    invalid: false,
                     start: 0,
                     length: 2,
+                    invalid: false,
                     content: [
                         {
                             type: 'simple-selector',
@@ -30,7 +30,7 @@ module.exports = {
                                     type: 'class-selector',
                                     start: 0,
                                     length: 1,
-                                    value: 'test'
+                                    value: 'a'
                                 }
                             ]
                         }
@@ -41,17 +41,12 @@ module.exports = {
         block: {
             type: 'block',
             start: 3,
-            length: 21,
+            length: 4,
             content: {
                 type: 'declaration',
                 start: 3,
-                length: 17,
-                next: {
-                    type: 'declaration',
-                    start: 20,
-                    length: 4,
-                    next: null
-                }
+                length: 4,
+                next: null
             }
         }
     }

@@ -1,47 +1,54 @@
 module.exports = {
     type: 'stylesheet',
     start: 0,
-    length: 9,
+    length: 12,
     content: {
         type: 'ruleset',
         start: 0,
-        length: 5,
+        length: 6,
         next: {
             type: 'ruleset',
-            start: 5,
-            length: 4,
+            start: 6,
+            length: 6,
             next: null,
             block: {
                 type: 'block',
-                start: 8,
-                length:0 ,
+                start: 11,
+                length: 0,
                 content: null
             },
             selector: {
                 type: 'selector-group',
-                start: 5,
-                length: 2,
+                start: 6,
+                length: 4,
                 invalid: true,
                 content: [
                     {
                         type: 'selector',
-                        start: 5,
-                        length: 1,
-                        invalid: false,
+                        start: 6,
+                        length: 4,
+                        invalid: true,
                         content: [
                             {
                                 type: 'simple-selector',
-                                start: 5,
+                                start: 6,
                                 length: 1,
                                 invalid: false,
                                 content: [
                                     {
                                         type: 'class-selector',
-                                        start: 5,
+                                        start: 6,
                                         length: 1,
                                         value: 'something'
                                     }
                                 ]
+                            },
+                            {
+                                type: 'combinator',
+                                start: 8,
+                                length: 1,
+                                invalid: false,
+                                value: '>'
                             }
                         ]
                     }
@@ -50,33 +57,40 @@ module.exports = {
         },
         block: {
             type: 'block',
-            content: null,
+            start: 5,
             length: 0,
-            start: 4
+            content: null
         },
         selector: {
             type: 'selector-group',
             start: 0,
-            length: 3,
+            length: 4,
             invalid: true,
             content: [
                 {
                     type: 'selector',
-                    invalid: false,
-                    start: 1,
-                    length: 2,
+                    start: 0,
+                    length: 4,
+                    invalid: true,
                     content: [
                         {
+                            type: 'combinator',
+                            value: '>',
+                            start: 0,
+                            length: 1,
+                            invalid: false
+                        },
+                        {
                             type: 'simple-selector',
-                            start: 1,
+                            start: 2,
                             length: 1,
                             invalid: false,
                             content: [
                                 {
                                     type: 'class-selector',
-                                    start: 1,
+                                    start: 2,
                                     length: 1,
-                                    value: 'invalid'
+                                    value: 'something'
                                 }
                             ]
                         }

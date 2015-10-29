@@ -31,9 +31,34 @@ module.exports = {
                         start: 35,
                         length: 8,
                         selector: {
-                            type: 'selector',
+                            type: 'selector-group',
                             start: 35,
-                            length: 2
+                            length: 2,
+                            invalid: false,
+                            content: [
+                                {
+                                    type: 'selector',
+                                    start: 35,
+                                    length: 2,
+                                    invalid: false,
+                                    content: [
+                                        {
+                                            type: 'simple-selector',
+                                            start: 35,
+                                            length: 1,
+                                            invalid: false,
+                                            content: [
+                                                {
+                                                    type: 'class-selector',
+                                                    start: 35,
+                                                    length: 1,
+                                                    value: 'a'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         block: {
                             type: 'block',
@@ -68,9 +93,11 @@ module.exports = {
                                 start: 51,
                                 length: 8,
                                 selector: {
-                                    type: 'selector',
+                                    type: 'selector-group',
                                     start: 51,
-                                    length: 2
+                                    length: 2,
+                                    invalid: true,
+                                    content: []
                                 },
                                 block: {
                                     type: 'block',
@@ -88,9 +115,34 @@ module.exports = {
                                     start: 59,
                                     length: 8,
                                     selector: {
-                                        type: 'selector',
+                                        type: 'selector-group',
                                         start: 59,
-                                        length: 2
+                                        length: 2,
+                                        invalid: false,
+                                        content: [
+                                            {
+                                                type: 'selector',
+                                                start: 59,
+                                                length: 2,
+                                                invalid: false,
+                                                content: [
+                                                    {
+                                                        type: 'simple-selector',
+                                                        start: 59,
+                                                        length: 1,
+                                                        invalid: false,
+                                                        content: [
+                                                            {
+                                                                type: 'type-selector',
+                                                                start: 59,
+                                                                length: 1,
+                                                                value: 'to'
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     },
                                     block: {
                                         type: 'block',
