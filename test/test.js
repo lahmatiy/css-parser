@@ -9,20 +9,28 @@ var fixturesPath = path.resolve(__dirname, 'fixtures');
 
 function processPath(testPath, callback) {
     fs.readdirSync(testPath).forEach(function(pathEntry) {
-        var inputFileName = path.resolve(testPath, pathEntry);
-        var ext = path.extname(inputFileName);
+        var searchPath = path.resolve(testPath, pathEntry);
 
-        if (ext !== '.css') {
-            return;
+
+        if (fs.statSync(searchPath).isDirectory()) {
+            describe(pathEntry, function() {
+                processPath(searchPath, callback);
+            });
+        } else {
+            var ext = path.extname(searchPath);
+
+            if (ext !== '.css') {
+                return;
+            }
+
+            it(pathEntry, function() {
+                var input = fs.readFileSync(searchPath, 'utf-8');
+                var expected = require(searchPath.replace(/\.css$/, '.js'));
+                var actual = callback(input.trim());
+
+                assert.deepEqual(actual, expected);
+            });
         }
-
-        it(pathEntry, function() {
-            var input = fs.readFileSync(inputFileName, 'utf-8');
-            var expected = require(inputFileName.replace(/\.css$/, '.js'));
-            var actual = callback(input.trim());
-
-            assert.deepEqual(actual, expected);
-        });
     });
 }
 
