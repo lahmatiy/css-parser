@@ -6,21 +6,21 @@ module.exports = {
         type: 'atrule',
         start: 0,
         length: 4,
-        paramsEnd: 3,
+        paramsLength: 2,
         name: '@import',
         block: null,
         next: {
             type: 'atrule',
             start: 4,
             length: 26,
-            paramsEnd: 25,
+            paramsLength: 24,
             name: '@import',
             block: null,
             next: {
                 type: 'atrule',
                 start: 30,
                 length: 15,
-                paramsEnd: 4,
+                paramsLength: 3,
                 name: '@media',
                 block: {
                     type: 'stylesheet',
@@ -57,7 +57,7 @@ module.exports = {
                         type: 'atrule',
                         start: 46,
                         length: 22,
-                        paramsEnd: 4,
+                        paramsLength: 3,
                         name: '@keyframes',
                         block: {
                             type: 'stylesheet',
