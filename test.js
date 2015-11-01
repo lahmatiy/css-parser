@@ -11,11 +11,11 @@ console.log('\nbaseline    mem:  %d',
     mem
 );
 
-var src = require('fs').readFileSync('../protools/web-frontend/build/agent/index-theme-app.css', 'utf-8');
+// var src = require('fs').readFileSync('../protools/web-frontend/build/agent/index-theme-app.css', 'utf-8');
 // 13171 declarations, 4183 blocks
 // var src = '/*\n  test\n*/\n .asd:nth-child(2n + 1) { color: rgba(255.2,255,255) /***/ url("sdf\\"dfsf") }';
-// var src = require('fs').readFileSync('./test.css', 'utf-8');
-// var src = require('fs').readFileSync('./test/fixtures/parser/selector-simple.css', 'utf-8');
+var src = require('fs').readFileSync('./test.css', 'utf-8');
+// var src = require('fs').readFileSync('./test/fixtures/parser/comment.css', 'utf-8');
 console.log('read        mem: +%d (%d symbols)',
     process.memoryUsage().heapUsed - mem,
     src.length
@@ -29,7 +29,7 @@ var time = process.hrtime();
 var mem = process.memoryUsage().heapUsed;
 
 // ///////////////
-var ast = parse(src, {
+var result = parse(src, {
     stat: true,
     sourceMap: sourceMap,
     translateFragments: translateFragments
@@ -39,8 +39,8 @@ var ast = parse(src, {
 
 var timeDiff = process.hrtime(time);
 // console.log('>', res.tokens.length);
-if (ast.stat) {
-    console.log(ast.stat.join('\n'));
+if (result.stat) {
+    console.log(result.stat.join('\n'));
 }
 
 console.log(
@@ -51,5 +51,5 @@ console.log(
 );
 
 if (printAst) {
-    console.log(JSON.stringify(ast, 0, 2));
+    console.log(JSON.stringify(result.ast, 0, 2));
 }

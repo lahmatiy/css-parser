@@ -36,6 +36,6 @@ describe('Parser', function() {
     processPath(path.resolve(fixturesPath, 'parser'), function(input) {
         return parse(input, {
             translateFragments: false
-        });
+        }).ast;
     });
 });
