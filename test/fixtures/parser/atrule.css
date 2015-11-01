@@ -1,0 +1,18 @@
+@import 'style.css';
+@import url(data:text/css;base64,...) print, not (max-width: 500px);
+
+@media print {
+  .a {
+    color: blue;
+  }
+};
+
+/* some animation */
+@keyframes foo {
+  0% {
+    color: red
+  }
+  to {
+    color: green;
+  }
+}
