@@ -25,7 +25,7 @@ module.exports = {
                 block: {
                     type: 'stylesheet',
                     start: 35,
-                    length: 9,
+                    length: 8,
                     content: {
                         type: 'ruleset',
                         start: 35,
@@ -62,7 +62,7 @@ module.exports = {
                         block: {
                             type: 'stylesheet',
                             start: 51,
-                            length: 17,
+                            length: 16,
                             content: {
                                 type: 'ruleset',
                                 start: 51,
