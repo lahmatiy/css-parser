@@ -1,4 +1,5 @@
 {
+  "name": "css-parser",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/*.js",
